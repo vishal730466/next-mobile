@@ -23,7 +23,11 @@ body{
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 768px) {
-  
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
     .nav{
       display:flex;
       width: 100vw;
