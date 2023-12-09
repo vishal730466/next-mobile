@@ -15,6 +15,20 @@ body{
   margin-bottom: 10px;
 }
 
+/* YourComponent.module.css */
+.container {
+  /* Styles for larger screens */
+  font-size: 16px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  body {
+    /* Styles for smaller screens (e.g., mobile devices) */
+    font-size: 14px;
+    background-color: blue;
+  }
+}
 
 
 .myul{
