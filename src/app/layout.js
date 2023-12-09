@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <ul className='nav' >
     <Link  href="/" ><li className="myul">Home</li></Link>
-    <Link href="/About"> <li className="myul">About</li></Link>
+    <Link href="/"> <li className="myul">About</li></Link>
     <Link href=""><li className="myul">About</li></Link>
     <Link href=""> <li className="myul">Contact</li></Link>
     </ul>
