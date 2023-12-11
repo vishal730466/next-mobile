@@ -15,10 +15,34 @@ body{
   margin-bottom: 10px;
 }
 
-/* YourComponent.module.css */
-.container {
-  /* Styles for larger screens */
-  font-size: 16px;
+.myul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 150px;
+  border: none;
+  
+  text-decoration: none;
+  background-color: rgb(230, 224, 224);
+  box-shadow:inset 10px 10px 10px -10px rgb(38, 39, 43),
+   -10px -10px 10px -10px rgba(255, 255, 255, 0.9);
+  color: black;
+ 
+}
+#f{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 150px;
+  border: none;
+  
+  text-decoration: none;
+  background-color: rgb(230, 224, 224);
+  box-shadow:inset 10px 10px 10px -10px rgb(38, 39, 43),
+   -10px -10px 10px -10px rgba(255, 255, 255, 0.9);
+  color: black;
 }
 
 /* Media query for smaller screens */
@@ -29,32 +53,36 @@ body{
     box-sizing: border-box;
   }
     .nav{
-      display:flex;
-      width: 100%;
+      display:block;
+      height: 100px;
+      width: 100px;
+      border:2px solid;
+      background-color: transparent;
       margin-bottom: 10px;
+      border-radius: 50%;
+      position: absolute;
+      right: 0%;
+      top: 50%;
     }
   
     .myul{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      z-index: 1;
+      display: none;
+      border-radius: 50%;
+      position: absolute;
+      height: 100px;
       width: 100px;
+
     }
+
+    #f{
+      background-color: blueviolet;
+      display: block;
+      border-radius: 50%;
+    }
+
+   
 }
 
 
-.myul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 150px;
-  border: none;
-  border-radius: 0px;
-  text-decoration: none;
-  background-color: rgb(230, 224, 224);
-  box-shadow:inset 10px 10px 10px -10px rgb(38, 39, 43),
-   -10px -10px 10px -10px rgba(255, 255, 255, 0.9);
-  color: black;
- 
-}
+
