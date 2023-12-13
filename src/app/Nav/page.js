@@ -8,7 +8,9 @@ import { useRef, useEffect, useState } from 'react';
 export const Nav = () => {
   const divRef = useRef(null);
   const [width, setWidth] = useState(0);
-  const [l1, setl1] = useState(false);
+  const [a, seta] = useState(0);
+
+ 
 
   useEffect(() => {
     const divElement = divRef.current;
@@ -43,6 +45,7 @@ export const Nav = () => {
           <Link href="/"><li className="myul"> Home</li></Link>
           <Link href="/about"> <li className="myul">About</li></Link>
           <Link href="/Nav"> <li className="myul">Contact</li></Link>
+          <Link href="/"> <li className="myul">Setting</li></Link> 
         </ul>
         <div ref={divRef} style={{ width: "100%", color: "red" }}>
           <p>The width is greter: {width}px</p>
@@ -55,12 +58,12 @@ export const Nav = () => {
   else {
     return (
       <div ref={divRef} style={{ width: "100%" }}>
-        <ul className='m_nav' > <div className='toggle'>
-          <Link href="/"><li className=""> Home</li></Link>
-          <Link href="/about"> <li className="">About</li></Link>
-          <Link href="/Nav"> <li className="">Contact</li></Link></div>
+        <ul className='m_nav' onClick={Toggle}> <div className='toggle'>
+          <Link href="/"><li className="ml1"> Home</li></Link>
+          <Link href="/about"> <li className="ml2">About</li></Link>
+          <Link href="/Nav"> <li className="ml3">Contact</li></Link>
+          <Link href="/"> <li className="ml4">Setting</li></Link> </div>
         </ul>
-        <button onClick={Toggle}> click me</button>
       </div>
     )
   }

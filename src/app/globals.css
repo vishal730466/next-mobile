@@ -45,45 +45,6 @@ body{
   color: black;
 }
 
-/* Media query for smaller screens */
-@media only screen and (max-width: 768px) {
-  /*
-  *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
-    .nav{
-      display:block;
-      height: 100px;
-      width: 100px;
-      border:2px solid;
-      background-color: transparent;
-      margin-bottom: 10px;
-      border-radius: 50%;
-      position: absolute;
-      right: 0%;
-      top: 50%;
-    }
-  
-    .myul{
-      z-index: 1;
-      display: none;
-      border-radius: 50%;
-      position: absolute;
-      height: 100px;
-      width: 100px;
-
-    }
-
-    #f{
-      background-color: blueviolet;
-      display: block;
-      border-radius: 50%;
-    }
-*/
-   
-}
 
 
 
