@@ -10,6 +10,7 @@
 
 .ml1{
    display: none;
+
    position: relative;
    bottom: 100px;
    left: 100px;
@@ -42,7 +43,7 @@
    height: 40px;
    width: 100px;
    background-color: rgb(230, 224, 224);
-   box-shadow:inset 5px 5px 5px -5px rgb(160, 162, 170),
-    -5px -5px 5px -5px rgba(255, 255, 255, 0.9);
+   box-shadow:inset 5px 5px 5px -5px rgb(122, 134, 182),
+    -5px -5px 5px -5px rgba(124, 173, 169, 0.9);
    color: black;
  }
