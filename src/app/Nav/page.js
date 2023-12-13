@@ -26,9 +26,13 @@ export const Nav = () => {
   function Toggle() {
     var divs = document.getElementsByClassName("toggle");
     for (var i = 0; i < divs.length; i++) {
-      if (divs[i].style.display === "none" || divs[i].style.display === "") {
+      if (divs[i].style.display === "none" ) {
         divs[i].style.display = "block";
-      } else {
+      }/*
+      else if( divs[i].style.display === ""){
+        divs[i].style.display = "none";
+      } */
+      else {
         divs[i].style.display = "none";
       }
     }

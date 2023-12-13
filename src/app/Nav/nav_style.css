@@ -36,7 +36,7 @@
 
  .ml1 , .ml2 ,.ml3 , .ml4{
    position: absolute;
-   display: none;
+  /* display: none; */
    display: flex;
    justify-content: center;
    align-items: center;
