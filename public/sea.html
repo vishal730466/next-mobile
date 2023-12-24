@@ -1,0 +1,135 @@
+<!--
+
+    'use client'
+import { useState } from 'react';
+
+const CircleAnimation = () => {
+  const [circles, setCircles] = useState([]);
+
+  const handleClick = (e) => {
+    const newCircle = {
+      left: e.clientX - 230 + 'px',
+      top: e.clientY - 200 + 'px'
+    };
+
+    setCircles([...circles, newCircle]);
+
+    setTimeout(() => {
+      setCircles(prevArray => prevArray.slice(1));
+      
+    }, 2000);
+  };
+
+  return (
+    <div
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100vh',
+        background: 'black',
+        display: 'flex',
+        justifyContent: 'center'
+      }}
+      onClick={handleClick}
+    >
+      <div
+        id="sea"
+        style={{
+          height: '90%',
+          width: '80%',
+          backgroundColor: 'rgb(74, 146, 146)',
+          position: 'relative',
+          boxShadow:
+            '-20px -20px 10px rgba(241, 241, 241, 0.905), 20px 20px 50px rgb(0, 0, 0), inset -7px -7px 7px rgba(86, 167, 187, 0.918), inset 7px 7px 7px rgba(0, 0, 0, 0.205)'
+        }}
+      >
+        {circles.map((circle, index) => (
+          <div
+            key={index}
+            className="maincircle"
+            style={{
+              position: 'absolute',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '220px',
+              width: '220px',
+              left: circle.left,
+              top: circle.top,
+              borderRadius: '50%',
+              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              animation: 'fadeCircle 3s infinite linear'
+            }}
+          >
+            <div
+              className="circle1"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100px',
+                height: '100px',
+                borderRadius: '50%',
+                border: '2px solid black',
+                animation: 'fadeCircle 2s infinite linear'
+              }}
+            >
+              <div
+                className="circle2"
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '50%',
+                  border: '2px solid black',
+                  position: 'absolute',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  animation: 'fadeCircle 2s infinite linear'
+                }}
+              >
+                <div
+                  className="circle3"
+                  style={{
+                    width: '25px',
+                    height: '25px',
+                    borderRadius: '50%',
+                    border: '2px solid black',
+                    position: 'absolute',
+                   
+                    transform: 'translate(-50%, -50%)',
+                    animation: 'fadeCircle 2s infinite linear',
+                   boxShadow:'inset 5px 5px 10px rgba(64, 194, 13, 0.445), inset 5px 5px 10px rgba(64, 194, 13, 0.445);'
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <style jsx>{`
+        @keyframes fadeCircle {
+          0% {
+            opacity: 1;
+            transform: scale(0);
+            
+          }
+          50% {
+            opacity: 0.7;
+            transform: scale(.5);
+          }
+          100% {
+            
+            opacity: 0;
+            transform: scale(1);
+            
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default CircleAnimation;
+
+-->

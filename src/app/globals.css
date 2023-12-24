@@ -4,15 +4,15 @@
   box-sizing: border-box;
 }
 body{
-  background-color: rgba(221, 214, 214, 0.39);
+  background-color: rgba(182, 177, 177, 0.374);
   
 }
 .nav{
+  height: 80px;
   display:flex;
   list-style: none;
   justify-content: space-around;
-  margin-top: 10px;
-  margin-bottom: 10px;
+ margin: 10px 0px;
 }
 
 .myul{
@@ -24,25 +24,22 @@ body{
   border: none;
   
   text-decoration: none;
-  background-color: rgb(230, 224, 224);
-  box-shadow:inset 10px 10px 10px -10px rgb(38, 39, 43),
-   -10px -10px 10px -10px rgba(255, 255, 255, 0.9);
-  color: black;
+  background-color: rgba(207, 203, 203, 0.61);
+  box-shadow:inset 3px 3px 3px  rgb(38, 39, 43),
+             inset  -3px -3px 3px white;
+               
+  color: rgb(40, 46, 49);
  
 }
-#f{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 150px;
-  border: none;
-  
+a{
   text-decoration: none;
-  background-color: rgb(230, 224, 224);
-  box-shadow:inset 10px 10px 10px -10px rgb(38, 39, 43),
-   -10px -10px 10px -10px rgba(255, 255, 255, 0.9);
-  color: black;
+  font-weight: 700;
+}
+
+#con{
+  height: 500px;
+  width: 500px;
+  border: 2px solid;
 }
 
 

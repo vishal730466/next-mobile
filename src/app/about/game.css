@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.board{
+    margin: 10px 100px;
+    height: 70vh;
+    width: 70vh;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -3px -3px 3px rgb(163, 162, 162),
+         3px 3px 3px rgb(199, 195, 195);
+}
+
+.block{
+    height: 20vh;
+    width: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15vh;
+    color: rgb(126, 38, 22);
+    -webkit-text-stroke:1px rgb(38, 58, 71);
+    box-shadow:inset -3px -3px 3px rgb(253, 252, 252),
+    inset 3px 3px 3px rgb(110, 109, 109);
+
+}
+#flash{
+    position: absolute;
+    width:60vh;
+    height: 35vh;
+    background-color: aqua;
+  }
+  
+  

@@ -52,7 +52,7 @@ export const Nav = () => {
           <Link href="/"> <li className="myul">Setting</li></Link> 
         </ul>
         <div ref={divRef} style={{ width: "100%", color: "red" }}>
-          <p>The width is greter: {width}px</p>
+        
         </div>
       </div>
 
