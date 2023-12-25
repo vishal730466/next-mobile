@@ -65,7 +65,9 @@ export const Nav = () => {
       }
     }
   }
-  
+  const handleClick = () => {
+    console.log('hello');
+  };
 
   if (width > 500) {
 
