@@ -66,7 +66,7 @@ export const Nav = () => {
           <Link href="/"><li className="ml1"> Home</li></Link>
           <Link href="/about"> <li className="ml2">About</li></Link>
           <Link href="/Nav"> <li className="ml3">Contact</li></Link>
-          <Link href="/"> <li className="ml4">Setting</li></Link> </div>
+          <Link href="/Move"> <li className="ml4">Setting</li></Link> </div>
         </ul>
       </div>
     )
