@@ -1,11 +1,12 @@
 'use client'
 import { useState, useEffect,useRef } from 'react';
 import './game.css'
+import './mobile.game.css'
 
 export const about =() =>{
 
   const divRef = useRef(null);
-  const [width, setWidth] = useState(0);
+  const [mobile, setmobile] = useState(false);
   const [visible, setvisible] = useState(false);
   const [arrayState, setArrayState] = useState(['', '', '', '', '', '', '', '', '']);
   const [Player, setPlayer] = useState("player1")
@@ -16,22 +17,37 @@ export const about =() =>{
 
 
   useEffect(() => {
+    const isMobileDevice = () => {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    };
+    
+    // Example usage:
+    if (isMobileDevice()) {
+      console.log('This is a mobile device.');
+      setmobile(true)
+    } else {
+      console.log('This is not a mobile device.');
+      setmobile(false)
+    }
+    
+
+/*
     const divElement = divRef.current;
     if (divElement) {
       const elementWidth = divElement.offsetWidth;
       setWidth(elementWidth);
     }
-
+    */
     const a = isWin();
     isGameOver();
 
     if (a === 'X') {
       setvisible(true);
-      setWinPlayer('Player1');
+      setWinPlayer('Winner is Player1');
     }
    else if (a === 'O') {
       setvisible(true);
-      setWinPlayer('Player2');
+      setWinPlayer('Winner is Player2');
     }
     else{
 
@@ -63,8 +79,8 @@ export const about =() =>{
     }
 
   };
-  const fun = (a) => {
 
+  const fun = (a) => {
 
     if (!clicked[a]) {
       const newClicked = [...clicked];
@@ -74,26 +90,31 @@ export const about =() =>{
 
       const newArray = [...arrayState];
 
+      (Player == "player1")? newArray[a] = 'X': newArray[a] = 'O';
+/*
       if (Player == "player1") {
         newArray[a] = 'X';
       }
       else {
         newArray[a] = 'O';
       }
+      */
       setArrayState(newArray)
       setPlayer(Player === 'player1' ? 'player2' : 'player1');
 
     }
   };
- 
-      // if(width>500){
+
+    
+       //setWidth(false)
+       if(!mobile){
   return (   <div>       
-<div ref={divRef} style={{ width: "100%" , border:"2px solid" }}>{width}</div>
+<div ref={divRef} ></div>
       this is game
       <div className="board">
         {visible &&
           <div id='flash'>
-            Winner is {WinPlayer}
+        {WinPlayer}
           </div>
         }
 
@@ -106,13 +127,15 @@ export const about =() =>{
     </div>
   )
 
- //  }
-/*
-else{
-  <div>
-     <div ref={divRef} style={{ width: "100%" }}>{width}</div>
+   }
+
+else {
+  return <div>
+    <div className='mboard'>
+
+    </div>
      this is mobile</div>
 }
-*/
+
 }
 export default about;
