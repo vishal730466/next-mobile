@@ -20,6 +20,34 @@ export const Nav = () => {
       setWidth(elementWidth);
     }
 
+    //move
+    const navelement = document.getElementById('myDiv');
+
+    const touchMoveHandler = (event) => {
+      const touch = event.touches[0];
+
+      navelement.style.position = 'absolute';
+      navelement.style.left = touch.clientX - 50 + 'px';
+      navelement.style.top = touch.clientY - 50 + 'px';
+    };
+
+    const createNewElement = () => {
+      const newDiv = document.createElement('div');
+      newDiv.textContent = 'New Element';
+      newDiv.style.position = 'absolute';
+      navelement.appendChild(newDiv);
+    };
+
+    navelement.addEventListener('touchmove', touchMoveHandler);
+
+    // Create a new element every second
+    const interval = setInterval(createNewElement, 1000);
+
+    return () => {
+      navelement.removeEventListener('touchmove', touchMoveHandler);
+      clearInterval(interval);
+    };
+
 
   }, []);
 
@@ -62,7 +90,7 @@ export const Nav = () => {
   else {
     return (
       <div ref={divRef} style={{ width: "100%" }}>
-        <ul className='m_nav' onClick={Toggle}> <div className='toggle'>
+        <ul className='m_nav' onClick={Toggle} onDoubleClick={handleClick}> <div className='toggle'>
           <Link href="/"><li className="ml1"> Home</li></Link>
           <Link href="/about"> <li className="ml2">About</li></Link>
           <Link href="/Nav"> <li className="ml3">Contact</li></Link>

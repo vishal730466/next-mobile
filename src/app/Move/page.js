@@ -3,30 +3,30 @@ import { useEffect } from 'react';
 
 const MyComponent = () => {
   useEffect(() => {
-    const divElement = document.getElementById('myDiv');
+    const navelement = document.getElementById('myDiv');
 
     const touchMoveHandler = (event) => {
       const touch = event.touches[0];
 
-      divElement.style.position = 'absolute';
-      divElement.style.left = touch.clientX - 50 + 'px';
-      divElement.style.top = touch.clientY - 50 + 'px';
+      navelement.style.position = 'absolute';
+      navelement.style.left = touch.clientX - 50 + 'px';
+      navelement.style.top = touch.clientY - 50 + 'px';
     };
 
     const createNewElement = () => {
       const newDiv = document.createElement('div');
       newDiv.textContent = 'New Element';
       newDiv.style.position = 'absolute';
-      divElement.appendChild(newDiv);
+      navelement.appendChild(newDiv);
     };
 
-    divElement.addEventListener('touchmove', touchMoveHandler);
+    navelement.addEventListener('touchmove', touchMoveHandler);
 
     // Create a new element every second
     const interval = setInterval(createNewElement, 1000);
 
     return () => {
-      divElement.removeEventListener('touchmove', touchMoveHandler);
+      navelement.removeEventListener('touchmove', touchMoveHandler);
       clearInterval(interval);
     };
   }, []);
