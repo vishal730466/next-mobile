@@ -92,7 +92,7 @@ export const Nav = () => {
   else {
     return (
       <div ref={divRef} style={{ width: "100%" }}>
-        <ul className='m_nav' onClick={Toggle} onDoubleClick={handleClick}> <div className='toggle'>
+        <ul className='m_nav' onClick={handleClick} onDoubleClick={Toggle}> <div className='toggle'>
           <Link href="/"><li className="ml1"> Home</li></Link>
           <Link href="/about"> <li className="ml2">About</li></Link>
           <Link href="/Nav"> <li className="ml3">Contact</li></Link>
