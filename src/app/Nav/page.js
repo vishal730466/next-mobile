@@ -33,7 +33,7 @@ export const Nav = () => {
 
     const createNewElement = () => {
       const newDiv = document.createElement('div');
-      newDiv.textContent = 'New Element';
+      newDiv.textContent = '';
       newDiv.style.position = 'absolute';
       navelement.appendChild(newDiv);
     };
@@ -97,7 +97,7 @@ export const Nav = () => {
         <ul id="myDiv" className='m_nav' onClick={handleClick} > <div className='toggle'>
           <Link href="/"><li className="ml1"> Home</li></Link>
           <Link href="/about"> <li className="ml2">About</li></Link>
-          <Link href="/Nav"> <li className="ml3">Contact</li></Link>
+          <Link href="/"> <li className="ml3">Contact</li></Link>
           <Link href="/"> <li className="ml4">Setting</li></Link> </div>
         </ul>
         </div>

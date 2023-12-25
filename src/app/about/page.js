@@ -132,6 +132,14 @@ export const about =() =>{
 else {
   return <div>
     <div className='mboard'>
+    {visible &&
+          <div id='mflash'>
+        {WinPlayer}
+          </div>
+        }
+    {arrayState.map((item, index) => (
+          <div key={index} onClick={() => fun(index)} className='mblock'>{item}</div>
+        ))}
 
     </div>
      this is mobile</div>
