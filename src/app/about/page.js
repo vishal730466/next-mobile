@@ -1,10 +1,11 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import './game.css'
 
-export default function about() {
+export const about =() =>{
 
-
+  const divRef = useRef(null);
+  const [width, setWidth] = useState(0);
   const [visible, setvisible] = useState(false);
   const [arrayState, setArrayState] = useState(['', '', '', '', '', '', '', '', '']);
   const [Player, setPlayer] = useState("player1")
@@ -12,18 +13,31 @@ export default function about() {
   const [clicked, setClicked] = useState(Array(arrayState.length).fill(false));
 
 
+
+
   useEffect(() => {
+    const divElement = divRef.current;
+    if (divElement) {
+      const elementWidth = divElement.offsetWidth;
+      setWidth(elementWidth);
+    }
+
     const a = isWin();
+    isGameOver();
+
     if (a === 'X') {
       setvisible(true);
       setWinPlayer('Player1');
     }
-    if (a === 'O') {
+   else if (a === 'O') {
       setvisible(true);
       setWinPlayer('Player2');
     }
+    else{
+
+      isGameOver();
+    }
     console.log("result is ", a)
-    isGameOver();
   }, [arrayState]);
 
   const isWin = () => {
@@ -45,7 +59,7 @@ export default function about() {
   const isGameOver = () => {
     if (arrayState.every(item => item !== '')) {
       setWinPlayer('Draw');
-       setvisible(false);
+       setvisible(true);
     }
 
   };
@@ -71,9 +85,10 @@ export default function about() {
 
     }
   };
-
-  return (
-    <div>
+ 
+      // if(width>500){
+  return (   <div>       
+<div ref={divRef} style={{ width: "100%" , border:"2px solid" }}>{width}</div>
       this is game
       <div className="board">
         {visible &&
@@ -90,4 +105,14 @@ export default function about() {
 
     </div>
   )
+
+ //  }
+/*
+else{
+  <div>
+     <div ref={divRef} style={{ width: "100%" }}>{width}</div>
+     this is mobile</div>
 }
+*/
+}
+export default about;

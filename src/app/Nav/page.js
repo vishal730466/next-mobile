@@ -8,7 +8,7 @@ import { useRef, useEffect, useState } from 'react';
 export const Nav = () => {
   const divRef = useRef(null);
   const [width, setWidth] = useState(0);
-  const [a, seta] = useState(0);
+
 
  
 
