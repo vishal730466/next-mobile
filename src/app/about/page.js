@@ -1,12 +1,12 @@
 'use client'
-import { useState, useEffect,useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './game.css'
 import './mobile.game.css'
 
-export const about =() =>{
+export const about = () => {
 
   const divRef = useRef(null);
-  const [mobile, setmobile] = useState(false);
+  const [mobile, setmobile] = useState(true);
   const [visible, setvisible] = useState(false);
   const [arrayState, setArrayState] = useState(['', '', '', '', '', '', '', '', '']);
   const [Player, setPlayer] = useState("player1")
@@ -20,8 +20,7 @@ export const about =() =>{
     const isMobileDevice = () => {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     };
-    
-    // Example usage:
+
     if (isMobileDevice()) {
       console.log('This is a mobile device.');
       setmobile(true)
@@ -29,27 +28,27 @@ export const about =() =>{
       console.log('This is not a mobile device.');
       setmobile(false)
     }
-    
-
-/*
-    const divElement = divRef.current;
-    if (divElement) {
-      const elementWidth = divElement.offsetWidth;
-      setWidth(elementWidth);
-    }
-    */
+    /*
+        const divElement = divRef.current;
+        if (divElement) {
+          const elementWidth = divElement.offsetWidth;
+          setWidth(elementWidth);
+        }
+        */
     const a = isWin();
     isGameOver();
 
     if (a === 'X') {
       setvisible(true);
       setWinPlayer('Winner is Player1');
+      setClicked(Array(arrayState.length).fill(true))
     }
-   else if (a === 'O') {
+    else if (a === 'O') {
       setvisible(true);
       setWinPlayer('Winner is Player2');
+      setClicked(Array(9).fill(true))
     }
-    else{
+    else {
 
       isGameOver();
     }
@@ -75,7 +74,7 @@ export const about =() =>{
   const isGameOver = () => {
     if (arrayState.every(item => item !== '')) {
       setWinPlayer('Draw');
-       setvisible(true);
+      setvisible(true);
     }
 
   };
@@ -90,31 +89,38 @@ export const about =() =>{
 
       const newArray = [...arrayState];
 
-      (Player == "player1")? newArray[a] = 'X': newArray[a] = 'O';
-/*
-      if (Player == "player1") {
-        newArray[a] = 'X';
-      }
-      else {
-        newArray[a] = 'O';
-      }
-      */
+      (Player == "player1") ? newArray[a] = 'X' : newArray[a] = 'O';
+      /*
+            if (Player == "player1") {
+              newArray[a] = 'X';
+            }
+            else {
+              newArray[a] = 'O';
+            }
+            */
       setArrayState(newArray)
       setPlayer(Player === 'player1' ? 'player2' : 'player1');
 
     }
   };
 
-    
-       //setWidth(false)
-       if(!mobile){
-  return (   <div>       
-<div ref={divRef} ></div>
+   const restart =()=>{
+    setClicked(Array(9).fill(false))
+    setArrayState(Array(9).fill(''))
+    setvisible(false)
+    setPlayer('player1')
+   }
+
+
+  //setWidth(false)
+  if (!mobile) {
+    return (<div id='con'>
+      <div ref={divRef} ></div>
       this is game
       <div className="board">
         {visible &&
           <div id='flash'>
-        {WinPlayer}
+            {WinPlayer} <button id='restart' onClick={restart}>Restart</button>
           </div>
         }
 
@@ -125,25 +131,25 @@ export const about =() =>{
       </div>
 
     </div>
-  )
+    )
 
-   }
+  }
 
-else {
-  return <div>
-    <div className='mboard'>
-    {visible &&
+  else {
+    return <div>
+      <div className='mboard'>
+        {visible &&
           <div id='mflash'>
-        {WinPlayer}
+            {WinPlayer}<button className='restart' onClick={restart}>Restart</button>
           </div>
         }
-    {arrayState.map((item, index) => (
+        {arrayState.map((item, index) => (
           <div key={index} onClick={() => fun(index)} className='mblock'>{item}</div>
         ))}
 
-    </div>
-     this is mobile</div>
-}
+      </div>
+      this is mobile</div>
+  }
 
 }
 export default about;

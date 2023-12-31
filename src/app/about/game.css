@@ -7,6 +7,7 @@
 .board{
     margin: 10px 100px;
     height: 70vh;
+    min-width: 70vh;
     width: 70vh;
     
     display: flex;
@@ -24,7 +25,7 @@
     justify-content: center;
     align-items: center;
     font-size: 15vh;
-    color: rgb(126, 38, 22);
+    color: rgb(122, 138, 182);
     -webkit-text-stroke:1px rgb(38, 58, 71);
     box-shadow:inset -3px -3px 3px rgb(253, 252, 252),
     inset 3px 3px 3px rgb(110, 109, 109);
@@ -34,7 +35,28 @@
     position: absolute;
     width:60vh;
     height: 35vh;
-    background-color: aqua;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: x-large;
+    font-weight: 50px;
+   background-color: rgba(0, 255, 255, 0.233);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   
-  
+  #restart{
+    margin-left: 5px;
+    width: 200px;
+    height: 30px;
+  }
+
+  #con{
+    height: calc(100vh - 80px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

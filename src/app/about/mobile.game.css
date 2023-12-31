@@ -30,7 +30,7 @@ background-color: rgb(175, 130, 71);
     justify-content: center;
     align-items: center;
     font-size: 15vh;
-    color: rgb(126, 38, 22);
+    color: rgb(122, 138, 182);
     -webkit-text-stroke:1px rgb(38, 58, 71);
     box-shadow:inset -3px -3px 3px rgb(253, 252, 252),
     inset 3px 3px 3px rgb(110, 109, 109);
@@ -39,6 +39,17 @@ background-color: rgb(175, 130, 71);
 #mflash{
     position: absolute;
     width:90vw;
-    height: 70vw;
-    background-color: aqua;
+    height: 50vw;
+    background-color: rgba(0, 255, 255, 0.233);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .restart{
+    margin-left: 5px;
+    width: 200px;
+    height: 30px;
   }
