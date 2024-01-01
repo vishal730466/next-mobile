@@ -13,10 +13,10 @@ background-color: rgb(175, 130, 71);
 }
 */
 .mboard{
-    width: calc(100vw-20px);
+    width: calc(100vw - 20px);
     height: 100vw;
-    border: 2px solid;
-    margin: 20vh 10px;
+
+  /*  margin: 20vh 10px;   */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -30,7 +30,7 @@ background-color: rgb(175, 130, 71);
     justify-content: center;
     align-items: center;
     font-size: 15vh;
-    color: rgb(122, 138, 182);
+    color: rgb(114, 164, 197);
     -webkit-text-stroke:1px rgb(38, 58, 71);
     box-shadow:inset -3px -3px 3px rgb(253, 252, 252),
     inset 3px 3px 3px rgb(110, 109, 109);
@@ -46,10 +46,31 @@ background-color: rgb(175, 130, 71);
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border-radius: 10%;
   }
 
   .restart{
     margin-left: 5px;
     width: 200px;
     height: 30px;
+  
+  }
+
+  .title{
+    height: auto;
+   /* display: flex;
+    justify-content: center;
+    align-items: center;    */
+    font-size: 30px;
+font-weight: bolder;
+  }
+
+  .con{
+    border: 2px solid;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }

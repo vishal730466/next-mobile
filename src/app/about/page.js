@@ -12,11 +12,24 @@ export const about = () => {
   const [Player, setPlayer] = useState("player1")
   const [WinPlayer, setWinPlayer] = useState('');
   const [clicked, setClicked] = useState(Array(arrayState.length).fill(false));
+  const [width, setWidth] = useState(0);
 
 
 
+  useEffect(()=>{
+    const divElement = divRef.current;
+   
+        if (divElement) {
+          const elementWidth = divElement.offsetWidth;
+          setWidth(elementWidth);
+        }
+        console.log('divElement updated');
+
+  })
 
   useEffect(() => {
+
+
     const isMobileDevice = () => {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     };
@@ -28,13 +41,7 @@ export const about = () => {
       console.log('This is not a mobile device.');
       setmobile(false)
     }
-    /*
-        const divElement = divRef.current;
-        if (divElement) {
-          const elementWidth = divElement.offsetWidth;
-          setWidth(elementWidth);
-        }
-        */
+
     const a = isWin();
     isGameOver();
 
@@ -49,11 +56,15 @@ export const about = () => {
       setClicked(Array(9).fill(true))
     }
     else {
-
       isGameOver();
     }
     console.log("result is ", a)
+
+   
   }, [arrayState]);
+
+
+
 
   const isWin = () => {
 
@@ -90,14 +101,7 @@ export const about = () => {
       const newArray = [...arrayState];
 
       (Player == "player1") ? newArray[a] = 'X' : newArray[a] = 'O';
-      /*
-            if (Player == "player1") {
-              newArray[a] = 'X';
-            }
-            else {
-              newArray[a] = 'O';
-            }
-            */
+ 
       setArrayState(newArray)
       setPlayer(Player === 'player1' ? 'player2' : 'player1');
 
@@ -112,7 +116,6 @@ export const about = () => {
    }
 
 
-  //setWidth(false)
   if (!mobile) {
     return (<div id='con'>
       <div ref={divRef} ></div>
@@ -129,14 +132,14 @@ export const about = () => {
         ))}
 
       </div>
-
+      <div ref={divRef} style={{ width: "100%", border: "2px solid yellow" }}>{width}</div>
     </div>
     )
 
   }
 
   else {
-    return <div>
+    return <div className='con'>  <div className='title'>Tic Tac Toe</div> 
       <div className='mboard'>
         {visible &&
           <div id='mflash'>
@@ -148,7 +151,7 @@ export const about = () => {
         ))}
 
       </div>
-      this is mobile</div>
+      footer</div>
   }
 
 }

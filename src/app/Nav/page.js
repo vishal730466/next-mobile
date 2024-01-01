@@ -79,11 +79,11 @@ export const Nav = () => {
         <ul className='nav' > 
           <Link href="/"><li className="myul"> Home</li></Link>
           <Link href="/about"> <li className="myul">About</li></Link>
-          <Link href="/Nav"> <li className="myul">Contact</li></Link>
+          <Link href="/"> <li className="myul">Contact</li></Link>
           <Link href="/Move"> <li className="myul">Setting</li></Link> 
         </ul>
-        <div ref={divRef} style={{ width: "100%", color: "red" }}>
-        
+        <div ref={divRef} style={{ width: "100%", color: "red" ,display:"none"}}>
+
         </div>
       </div>
 
