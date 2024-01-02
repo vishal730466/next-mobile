@@ -14,8 +14,6 @@ export const about = () => {
   const [clicked, setClicked] = useState(Array(arrayState.length).fill(false));
   const [width, setWidth] = useState(0);
 
-
-
   useEffect(()=>{
     const divElement = divRef.current;
    

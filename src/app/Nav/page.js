@@ -29,6 +29,17 @@ export const Nav = () => {
       navelement.style.position = 'absolute';
       navelement.style.left = touch.clientX - 50 + 'px';
       navelement.style.top = touch.clientY - 50 + 'px';
+
+
+      let val = navelement.style.top ;
+      let intval= parseInt(val)
+      if (intval < 100 ) {
+        navelement.style.top = '100px'
+      } else {
+        
+      }
+      
+      console.log(intval)
     };
 
     const createNewElement = () => {
@@ -64,6 +75,7 @@ export const Nav = () => {
         divs[i].style.display = "none";
       }
     }
+    
   }
   //move
   const handleClick = () => {
@@ -93,12 +105,15 @@ export const Nav = () => {
   else {
     return (
       <div ref={divRef} style={{ width: "100%" }}>
-        <div onClick={Toggle}>
-        <ul id="myDiv" className='m_nav' onClick={handleClick} > <div className='toggle'>
-          <Link href="/"><li className="ml1"> Home</li></Link>
-          <Link href="/about"> <li className="ml2">About</li></Link>
-          <Link href="/"> <li className="ml3">Contact</li></Link>
-          <Link href="/"> <li className="ml4">Setting</li></Link> </div>
+        <div onClick={Toggle} > 
+        <ul id="myDiv" className='m_nav' onClick={handleClick} > <div className='toggle' >
+
+          <Link href="/"><li className="ml1" style={{animation:"a2 1s 1 "}} > Home</li></Link>
+          <Link href="/about"> <li className="ml2" style={{animation:"a2 1s 1 "}} >About</li></Link>
+          <Link href="/"> <li className="ml3" style={{animation:"a1 1s 1 "}}>Contact</li></Link>
+          <Link href="/"> <li className="ml4" style={{animation:"a1 1s 1"}}>Setting</li></Link> 
+          <div className='navstyle' style={{animation:"a3 1s 1 "}}></div>
+          </div>
         </ul>
         </div>
       </div>

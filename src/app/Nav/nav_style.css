@@ -1,11 +1,16 @@
 .m_nav{
     height: 80px;
     width: 80px;
-    border: 2px solid;
+    border: 2px solid;  
     border-radius: 50%;
     position: absolute;
     left: 0%;
     top: 45vh;
+
+    background-color: rgb(230, 224, 224);
+    box-shadow:inset 5px 5px -5px rgba(97, 99, 105, 0.418),
+     inset -5px -5px 5px rgba(245, 245, 245, 0.9);
+    color: black;
 }
 
 .ml1{
@@ -37,6 +42,7 @@
  .ml1 , .ml2 ,.ml3 , .ml4{
    position: absolute;
   /* display: none; */
+ 
    display: flex;
    justify-content: center;
    align-items: center;
@@ -46,4 +52,49 @@
    box-shadow:inset 5px 5px 5px -5px rgb(122, 134, 182),
     -5px -5px 5px -5px rgba(124, 173, 169, 0.9);
    color: black;
+ }
+
+ .navstyle{
+  height: 160px;
+  width: 10px;
+  background-color: brown;
+  position: relative;
+  bottom: 50px;
+  left: 80px;  
+
+  background-color: rgb(230, 224, 224);
+  box-shadow:inset 5px 5px 5px  rgb(34, 35, 36);
+
+  color: black;
+ }
+
+ @keyframes a1{
+  0%{
+    left:0px;
+
+  }
+  100%{
+ 
+  }
+ }
+
+ @keyframes a2{
+  0%{
+    left:0px;
+ bottom: 0px;
+  }
+  100%{
+ 
+  }
+ }
+ @keyframes a3{
+  0%{
+   height: 0px;
+   left: 0;
+   bottom: 0;
+  }
+  90%{
+   
+     height: 160px;
+  }
  }
