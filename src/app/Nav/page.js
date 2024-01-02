@@ -30,18 +30,31 @@ export const Nav = () => {
       navelement.style.left = touch.clientX - 50 + 'px';
       navelement.style.top = touch.clientY - 50 + 'px';
 
-
-      let val = navelement.style.top ;
-      let intval= parseInt(val)
-      if (intval < 100 ) {
+    //set top and bottom
+      let topval = navelement.style.top ;
+      let top_intval= parseInt(topval)
+      if (top_intval < 100 ) {
         navelement.style.top = '100px'
       }
-      else if(intval > 500){
+      else if(top_intval > 500){
         navelement.style.top = '500px'
       }
       
-      console.log(intval)
+   //   console.log(top_intval)
+      
+      //set top and bottom
+      let leftval = navelement.style.left ;
+      let left_intval= parseInt(leftval)
+      if (left_intval < 0 ) {
+        navelement.style.left = '0px'
+      }
+      else if(left_intval > 95){
+        navelement.style.left = '95px'
+      }
+      
+      console.log(left_intval)
     };
+    
 
     const createNewElement = () => {
       const newDiv = document.createElement('div');
