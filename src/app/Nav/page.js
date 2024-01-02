@@ -48,8 +48,8 @@ export const Nav = () => {
       if (left_intval < 0 ) {
         navelement.style.left = '0px'
       }
-      else if(left_intval > 120){
-        navelement.style.left = '120px'
+      else if(left_intval > 150){
+        navelement.style.left = '150px'
       }
       
       console.log(left_intval)
