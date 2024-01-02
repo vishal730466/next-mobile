@@ -42,7 +42,7 @@ export const Nav = () => {
       
    //   console.log(top_intval)
       
-      //set top and bottom
+      //set left and right
       let leftval = navelement.style.left ;
       let left_intval= parseInt(leftval)
       if (left_intval < 0 ) {
@@ -52,7 +52,7 @@ export const Nav = () => {
         navelement.style.left = '150px'
       }
       
-      console.log(left_intval)
+     // console.log(left_intval)
     };
     
 
