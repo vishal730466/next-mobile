@@ -36,8 +36,8 @@ export const Nav = () => {
       if (intval < 100 ) {
         navelement.style.top = '100px'
       }
-      else if(intval > 600){
-        navelement.style.top = '600px'
+      else if(intval > 500){
+        navelement.style.top = '500px'
       }
       
       console.log(intval)
